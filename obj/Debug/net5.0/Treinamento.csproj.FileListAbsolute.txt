@@ -1,0 +1,16 @@
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Treinamento.exe
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Treinamento.deps.json
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Treinamento.runtimeconfig.json
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Treinamento.runtimeconfig.dev.json
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Treinamento.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\ref\Treinamento.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Treinamento.pdb
+C:\Development\Git\Treinamento\obj\Debug\net5.0\Treinamento.csprojAssemblyReference.cache
+C:\Development\Git\Treinamento\obj\Debug\net5.0\Treinamento.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\Git\Treinamento\obj\Debug\net5.0\Treinamento.AssemblyInfoInputs.cache
+C:\Development\Git\Treinamento\obj\Debug\net5.0\Treinamento.AssemblyInfo.cs
+C:\Development\Git\Treinamento\obj\Debug\net5.0\Treinamento.csproj.CoreCompileInputs.cache
+C:\Development\Git\Treinamento\obj\Debug\net5.0\Treinamento.dll
+C:\Development\Git\Treinamento\obj\Debug\net5.0\ref\Treinamento.dll
+C:\Development\Git\Treinamento\obj\Debug\net5.0\Treinamento.pdb
+C:\Development\Git\Treinamento\obj\Debug\net5.0\Treinamento.genruntimeconfig.cache
