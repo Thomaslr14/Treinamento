@@ -8,20 +8,30 @@ namespace Treinamento
     {
         static void Main(string[] args)
         {
-           /* for (int i = 0; i < 99999; i++)
-            {
-                Console.WriteLine("ME LIGAAAA !!!!!");
-            } */
             string senha = "1";
             while (senha != "0")
             {
             Console.WriteLine("Qual a senha que deseja encriptar? ");
             senha = Console.ReadLine();
-            Console.WriteLine(Convert.ToBase64String(Hash.GenerateHash(senha)));
+            var hash = Hash.GenerateHash(senha);
+            var salt = Salt.GenerateSalt();
+            var encrypt = Program.JoinHashSalt(salt, hash);
+            Console.WriteLine($"SENHA: {Convert.ToBase64String(hash)}");
+            Console.WriteLine($"SALT: {Convert.ToBase64String(salt)}");
+            Console.WriteLine($"ENCRYPT FINAL: {Convert.ToBase64String(encrypt)}");
             }
-
-            
         }
+
+        static byte[] JoinHashSalt(byte[] salt, byte[] hash) 
+        {
+            string SaltString = Convert.ToBase64String(salt);
+            string HashString = Convert.ToBase64String(hash);
+            byte[] overall = Encoding.ASCII.GetBytes(SaltString + HashString);
+            
+            byte[] encrypt = SHA512.Create().ComputeHash(overall);
+            return encrypt;
+        }
+
 
         class Hash
         {
@@ -34,11 +44,15 @@ namespace Treinamento
             }
         }
         class Salt
-        {
+        {            
             public static byte[] GenerateSalt()
             {
-                var tamanho = new byte[32];
-                byte[] salt = RandomNumberGenerator.Create().GetNonZeroBytes(tamanho);
+                using (RNGCryptoServiceProvider random = new RNGCryptoServiceProvider())
+                {
+                    byte[] tamanho = new byte[128];
+                    random.GetNonZeroBytes(tamanho);
+                    return tamanho;
+                }
 
             }
         }
