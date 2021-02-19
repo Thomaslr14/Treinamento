@@ -10,6 +10,6 @@ namespace Treinamento.Database
         
         [Required]
         public byte[] SaltUser {get;set;}
-        public List<User> Users {get;set;}
+        public List<Users> Users {get;set;}
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Treinamento.Database
 {
     
-    public class User
+    public class Users
     
     {
         [Key()]

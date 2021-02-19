@@ -10,7 +10,8 @@ namespace Treinamento
         static void Main(string[] args)
         {
 
-          //  var connect = new DatabaseConnection();
+            var connect = new DatabaseConnection();
+            
 
             string senha = "1";
             while (senha != "0")
