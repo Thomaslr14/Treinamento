@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Security.Cryptography;
+using Treinamento.Database;
 
 namespace Treinamento
 {
@@ -8,6 +9,9 @@ namespace Treinamento
     {
         static void Main(string[] args)
         {
+
+          //  var connect = new DatabaseConnection();
+
             string senha = "1";
             while (senha != "0")
             {
@@ -56,6 +60,8 @@ namespace Treinamento
 
             }
         }
+
+        
     }
 }
   
