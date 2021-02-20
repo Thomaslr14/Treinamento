@@ -8,10 +8,13 @@ namespace Treinamento.Database
     
     {
         [Key()]
+        public int UsersID {get;set;}
+        
+        [Required,MaxLength(30)] 
         public string Username {get;set;}
 
         [Required]
-        public string Password {get;set;}  
+        public byte[] Password {get;set;}  
 
         public int SaltID_FK {get;set;}
 

@@ -21,7 +21,7 @@ namespace Treinamento.Migrations
 
             modelBuilder.Entity("Treinamento.Database.Salt", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("SaltID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -30,12 +30,12 @@ namespace Treinamento.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("SaltID");
 
-                    b.ToTable("Salt");
+                    b.ToTable("Salts");
                 });
 
-            modelBuilder.Entity("Treinamento.Database.User", b =>
+            modelBuilder.Entity("Treinamento.Database.Users", b =>
                 {
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(450)");
@@ -51,10 +51,10 @@ namespace Treinamento.Migrations
 
                     b.HasIndex("SaltID_FK");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Treinamento.Database.User", b =>
+            modelBuilder.Entity("Treinamento.Database.Users", b =>
                 {
                     b.HasOne("Treinamento.Database.Salt", "Salt")
                         .WithMany("Users")

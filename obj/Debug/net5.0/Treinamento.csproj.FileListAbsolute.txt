@@ -69,3 +69,17 @@ C:\Development\Git\Treinamento\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\S
 C:\Development\Git\Treinamento\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Development\Git\Treinamento\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Development\Git\Treinamento\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Hosting.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Logging.Configuration.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Logging.Console.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Logging.Debug.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Logging.EventLog.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Logging.EventSource.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\System.Diagnostics.EventLog.dll
+C:\Development\Git\Treinamento\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll

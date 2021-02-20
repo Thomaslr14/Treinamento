@@ -6,7 +6,7 @@ namespace Treinamento.Database
     public class Salt
     {
         [Key()]
-        public int Id {get;set;}
+        public int SaltID {get;set;}
         
         [Required]
         public byte[] SaltUser {get;set;}

@@ -8,16 +8,16 @@ namespace Treinamento.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Salt",
+                name: "Salts",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    SaltID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SaltUser = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Salt", x => x.Id);
+                    table.PrimaryKey("PK_Salts", x => x.SaltID);
                 });
 
             migrationBuilder.CreateTable(
@@ -32,10 +32,10 @@ namespace Treinamento.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Username);
                     table.ForeignKey(
-                        name: "FK_Users_Salt_SaltID_FK",
+                        name: "FK_Users_Salts_SaltID_FK",
                         column: x => x.SaltID_FK,
-                        principalTable: "Salt",
-                        principalColumn: "Id",
+                        principalTable: "Salts",
+                        principalColumn: "SaltID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -51,7 +51,7 @@ namespace Treinamento.Migrations
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Salt");
+                name: "Salts");
         }
     }
 }

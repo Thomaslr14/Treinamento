@@ -10,7 +10,7 @@ using Treinamento.Database;
 namespace Treinamento.Migrations
 {
     [DbContext(typeof(DatabaseConnection))]
-    [Migration("20210219020114_InitialCreate")]
+    [Migration("20210220023927_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace Treinamento.Migrations
 
             modelBuilder.Entity("Treinamento.Database.Salt", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("SaltID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -32,9 +32,9 @@ namespace Treinamento.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("SaltID");
 
-                    b.ToTable("Salt");
+                    b.ToTable("Salts");
                 });
 
             modelBuilder.Entity("Treinamento.Database.Users", b =>
@@ -53,7 +53,7 @@ namespace Treinamento.Migrations
 
                     b.HasIndex("SaltID_FK");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Treinamento.Database.Users", b =>
