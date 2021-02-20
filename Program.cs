@@ -2,6 +2,10 @@
 using System.Text;
 using System.Security.Cryptography;
 using Treinamento.Database;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace Treinamento
 {
@@ -10,8 +14,8 @@ namespace Treinamento
         static void Main(string[] args)
         {
 
-            var connect = new DatabaseConnection();
-            
+            DatabaseConnection connect = new DatabaseConnection();
+
 
             string senha = "1";
             while (senha != "0")
@@ -26,6 +30,8 @@ namespace Treinamento
             Console.WriteLine($"ENCRYPT FINAL: {Convert.ToBase64String(encrypt)}");
             }
         }
+        
+        
 
         static byte[] JoinHashSalt(byte[] salt, byte[] hash) 
         {
@@ -61,7 +67,7 @@ namespace Treinamento
 
             }
         }
-
+        
         
     }
 }
