@@ -32,26 +32,33 @@ namespace Treinamento.Migrations
 
                     b.HasKey("SaltID");
 
-                    b.ToTable("Salts");
+                    b.ToTable("SALTS");
                 });
 
             modelBuilder.Entity("Treinamento.Database.Users", b =>
                 {
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UsersID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Password")
+                    b.Property<byte[]>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int>("SaltID_FK")
                         .HasColumnType("int");
 
-                    b.HasKey("Username");
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("UsersID");
 
                     b.HasIndex("SaltID_FK");
 
-                    b.ToTable("Users");
+                    b.ToTable("USERS");
                 });
 
             modelBuilder.Entity("Treinamento.Database.Users", b =>

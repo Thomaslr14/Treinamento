@@ -14,22 +14,47 @@ namespace Treinamento
         static void Main(string[] args)
         {
 
-            DatabaseConnection connect = new DatabaseConnection();
-
-
-            string senha = "1";
-            while (senha != "0")
+            string password = "1";
+            while (password != "0")
             {
-            Console.WriteLine("Qual a senha que deseja encriptar? ");
-            senha = Console.ReadLine();
-            var hash = Hash.GenerateHash(senha);
-            var salt = Salt.GenerateSalt();
-            var encrypt = Program.JoinHashSalt(salt, hash);
-            Console.WriteLine($"SENHA: {Convert.ToBase64String(hash)}");
-            Console.WriteLine($"SALT: {Convert.ToBase64String(salt)}");
-            Console.WriteLine($"ENCRYPT FINAL: {Convert.ToBase64String(encrypt)}");
+                
+                
+                    using(DatabaseConnection db = new DatabaseConnection())
+                    {
+                        Users u = new Users();
+                        Salt s = new Salt();
+                        
+
+                        Console.WriteLine("Informe um usuário:");
+                        var username = Console.ReadLine();
+                        
+                        Console.WriteLine("Informe uma senha: ");
+                        password = Console.ReadLine();
+                
+                        var salt = Salt.GenerateSalt();
+
+                        var encrypt = Program.JoinHashSalt(salt, Hash.GenerateHash(password));
+                        
+                        u.Username = username;
+                        u.Password = encrypt;
+                        u.SaltID_FK = 1;
+                        u.Salt.SaltID = 1;
+                        u.Salt.SaltUser = salt;
+
+                        db.Add(u);
+                        db.SaveChanges();
+
+
+                        // Console.WriteLine($"SENHA: {Convert.ToBase64String(hash)}");
+                        // Console.WriteLine($"SALT: {Convert.ToBase64String(salt)}");
+                        // Console.WriteLine($"ENCRYPT FINAL: {Convert.ToBase64String(encrypt)}");
+                    }
+               
             }
+
+            
         }
+        
         
         
 

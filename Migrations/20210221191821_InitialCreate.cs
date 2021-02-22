@@ -8,7 +8,7 @@ namespace Treinamento.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Salts",
+                name: "SALTS",
                 columns: table => new
                 {
                     SaltID = table.Column<int>(type: "int", nullable: false)
@@ -17,41 +17,43 @@ namespace Treinamento.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Salts", x => x.SaltID);
+                    table.PrimaryKey("PK_SALTS", x => x.SaltID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "USERS",
                 columns: table => new
                 {
-                    Username = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsersID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     SaltID_FK = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Username);
+                    table.PrimaryKey("PK_USERS", x => x.UsersID);
                     table.ForeignKey(
-                        name: "FK_Users_Salts_SaltID_FK",
+                        name: "FK_USERS_SALTS_SaltID_FK",
                         column: x => x.SaltID_FK,
-                        principalTable: "Salts",
+                        principalTable: "SALTS",
                         principalColumn: "SaltID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_SaltID_FK",
-                table: "Users",
+                name: "IX_USERS_SaltID_FK",
+                table: "USERS",
                 column: "SaltID_FK");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "USERS");
 
             migrationBuilder.DropTable(
-                name: "Salts");
+                name: "SALTS");
         }
     }
 }

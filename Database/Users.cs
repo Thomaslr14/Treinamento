@@ -3,14 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Treinamento.Database
 {
-    
+    [Table("USERS")]
     public class Users
     
     {
         [Key()]
         public int UsersID {get;set;}
         
-        [Required,MaxLength(30)] 
+        [Required,MaxLength(50)] 
         public string Username {get;set;}
 
         [Required]

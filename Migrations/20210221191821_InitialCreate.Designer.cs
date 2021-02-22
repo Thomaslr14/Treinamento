@@ -10,7 +10,7 @@ using Treinamento.Database;
 namespace Treinamento.Migrations
 {
     [DbContext(typeof(DatabaseConnection))]
-    [Migration("20210220023927_InitialCreate")]
+    [Migration("20210221191821_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,26 +34,33 @@ namespace Treinamento.Migrations
 
                     b.HasKey("SaltID");
 
-                    b.ToTable("Salts");
+                    b.ToTable("SALTS");
                 });
 
             modelBuilder.Entity("Treinamento.Database.Users", b =>
                 {
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UsersID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Password")
+                    b.Property<byte[]>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int>("SaltID_FK")
                         .HasColumnType("int");
 
-                    b.HasKey("Username");
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("UsersID");
 
                     b.HasIndex("SaltID_FK");
 
-                    b.ToTable("Users");
+                    b.ToTable("USERS");
                 });
 
             modelBuilder.Entity("Treinamento.Database.Users", b =>
