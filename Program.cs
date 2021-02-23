@@ -25,16 +25,14 @@ namespace Treinamento
                         var username = Console.ReadLine();
                         
                         Console.WriteLine("Informe uma senha: ");
-                        password = Console.ReadLine();
-                
+                        byte[] pass = Hash.GenerateHash(Console.ReadLine());
+                         
                         var salt = Salt.GenerateSalt();
-
-                        var encrypt = Program.JoinHashSalt(salt, Hash.GenerateHash(password));
                         
                         Users u = new Users();
                                                
                         u.Username = username;
-                        u.Password = encrypt;
+                        u.Password = Program.JoinHashSalt(salt, pass);
                         u.Salt = new Database.Salt();
                         u.Salt.SaltUser = salt;
 
