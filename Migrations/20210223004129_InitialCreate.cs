@@ -11,40 +11,41 @@ namespace Treinamento.Migrations
                 name: "SALTS",
                 columns: table => new
                 {
-                    SaltID = table.Column<int>(type: "int", nullable: false)
+                    SaltId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SaltUser = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SALTS", x => x.SaltID);
+                    table.PrimaryKey("PK_SALTS", x => x.SaltId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "USERS",
                 columns: table => new
                 {
-                    UsersID = table.Column<int>(type: "int", nullable: false)
+                    UsersId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Password = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    SaltID_FK = table.Column<int>(type: "int", nullable: false)
+                    Salt_FK = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_USERS", x => x.UsersID);
+                    table.PrimaryKey("PK_USERS", x => x.UsersId);
                     table.ForeignKey(
-                        name: "FK_USERS_SALTS_SaltID_FK",
-                        column: x => x.SaltID_FK,
+                        name: "FK_USERS_SALTS_Salt_FK",
+                        column: x => x.Salt_FK,
                         principalTable: "SALTS",
-                        principalColumn: "SaltID",
+                        principalColumn: "SaltId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_USERS_SaltID_FK",
+                name: "IX_USERS_Salt_FK",
                 table: "USERS",
-                column: "SaltID_FK");
+                column: "Salt_FK",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

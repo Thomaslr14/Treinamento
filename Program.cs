@@ -21,10 +21,6 @@ namespace Treinamento
                 
                     using(DatabaseConnection db = new DatabaseConnection())
                     {
-                        Users u = new Users();
-                        Salt s = new Salt();
-                        
-
                         Console.WriteLine("Informe um usuário:");
                         var username = Console.ReadLine();
                         
@@ -35,15 +31,17 @@ namespace Treinamento
 
                         var encrypt = Program.JoinHashSalt(salt, Hash.GenerateHash(password));
                         
+                        Users u = new Users();
+                                               
                         u.Username = username;
                         u.Password = encrypt;
-                        u.SaltID_FK = 1;
-                        u.Salt.SaltID = 1;
+                        u.Salt = new Database.Salt();
                         u.Salt.SaltUser = salt;
 
                         db.Add(u);
                         db.SaveChanges();
 
+                       
 
                         // Console.WriteLine($"SENHA: {Convert.ToBase64String(hash)}");
                         // Console.WriteLine($"SALT: {Convert.ToBase64String(salt)}");

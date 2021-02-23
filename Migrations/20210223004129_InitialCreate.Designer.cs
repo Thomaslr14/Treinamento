@@ -10,7 +10,7 @@ using Treinamento.Database;
 namespace Treinamento.Migrations
 {
     [DbContext(typeof(DatabaseConnection))]
-    [Migration("20210221191821_InitialCreate")]
+    [Migration("20210223004129_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace Treinamento.Migrations
 
             modelBuilder.Entity("Treinamento.Database.Salt", b =>
                 {
-                    b.Property<int>("SaltID")
+                    b.Property<int>("SaltId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -32,14 +32,14 @@ namespace Treinamento.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.HasKey("SaltID");
+                    b.HasKey("SaltId");
 
                     b.ToTable("SALTS");
                 });
 
             modelBuilder.Entity("Treinamento.Database.Users", b =>
                 {
-                    b.Property<int>("UsersID")
+                    b.Property<int>("UsersId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -48,7 +48,7 @@ namespace Treinamento.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<int>("SaltID_FK")
+                    b.Property<int>("Salt_FK")
                         .HasColumnType("int");
 
                     b.Property<string>("Username")
@@ -56,9 +56,10 @@ namespace Treinamento.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("UsersID");
+                    b.HasKey("UsersId");
 
-                    b.HasIndex("SaltID_FK");
+                    b.HasIndex("Salt_FK")
+                        .IsUnique();
 
                     b.ToTable("USERS");
                 });
@@ -66,8 +67,8 @@ namespace Treinamento.Migrations
             modelBuilder.Entity("Treinamento.Database.Users", b =>
                 {
                     b.HasOne("Treinamento.Database.Salt", "Salt")
-                        .WithMany("Users")
-                        .HasForeignKey("SaltID_FK")
+                        .WithOne("Users")
+                        .HasForeignKey("Treinamento.Database.Users", "Salt_FK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

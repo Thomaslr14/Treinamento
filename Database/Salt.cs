@@ -7,11 +7,11 @@ namespace Treinamento.Database
     [Table("SALTS")]
     public class Salt
     {
-        [Key()]
-        public int SaltID {get;set;}
+        public int SaltId {get;set;}
         
         [Required]
         public byte[] SaltUser {get;set;}
-        public List<Users> Users {get;set;}
+        
+        public virtual Users Users {get;set;}
     }
 }

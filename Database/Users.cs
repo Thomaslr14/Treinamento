@@ -7,19 +7,18 @@ namespace Treinamento.Database
     public class Users
     
     {
-        [Key()]
-        public int UsersID {get;set;}
+        public int UsersId {get;set;}
         
         [Required,MaxLength(50)] 
         public string Username {get;set;}
 
         [Required]
-        public byte[] Password {get;set;}  
+        public byte[] Password {get;set;}
 
-        public int SaltID_FK {get;set;}
-
-        [ForeignKey("SaltID_FK")]
-        public Salt Salt {get;set;}
+        public int Salt_FK {get;set;}
+        
+        [ForeignKey("Salt_FK")]
+        public virtual Salt Salt {get;set;}     
 
     }
 }
