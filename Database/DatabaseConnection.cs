@@ -11,7 +11,8 @@ namespace Treinamento.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {   
-            optionsBuilder.UseSqlServer(@"Server=localhost;Database=master;Trusted_Connection=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer(@"Server=NTBHMDC090747;Database=master;Trusted_Connection=True;MultipleActiveResultSets=true");
+            
         }
         
     }
