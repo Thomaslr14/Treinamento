@@ -6464,11 +6464,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\Git\\Treinamento\\Treinamento.csproj",
+      "projectUniqueName": "C:\\DEVELOPMENT\\Git\\Treinamento\\Treinamento.csproj",
       "projectName": "Treinamento",
-      "projectPath": "C:\\Development\\Git\\Treinamento\\Treinamento.csproj",
+      "projectPath": "C:\\DEVELOPMENT\\Git\\Treinamento\\Treinamento.csproj",
       "packagesPath": "C:\\Users\\thomas.rodrigues\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\Git\\Treinamento\\obj\\",
+      "outputPath": "C:\\DEVELOPMENT\\Git\\Treinamento\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6539,7 +6539,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

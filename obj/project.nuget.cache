@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gh8U6mZP6hSb2OErJ9i/zGBj7HMkNuO3eId0xPf5pE47RAUThTxDMZLyLEMykTCJ6SLUWEWhvGRJjKLNsigv6A==",
+  "dgSpecHash": "8d+xWSMIyXUHMZwyVBts84DexOtpl2AMyNwJWftjviNyexBTE9KfszByPx9avpJmaMWpK4SbI0LmJI5wVzsdLA==",
   "success": true,
-  "projectFilePath": "C:\\Development\\Git\\Treinamento\\Treinamento.csproj",
+  "projectFilePath": "C:\\DEVELOPMENT\\Git\\Treinamento\\Treinamento.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thomas.rodrigues\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\thomas.rodrigues\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
